@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "facing=down": {
+      "model": "varhopper:block/hyper_hopper"
+    },
+    "facing=north": {
+      "model": "varhopper:block/hyper_hopper_side"
+    },
+    "facing=east": {
+      "model": "varhopper:block/hyper_hopper_side",
+      "y": 90
+    },
+    "facing=south": {
+      "model": "varhopper:block/hyper_hopper_side",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "varhopper:block/hyper_hopper_side",
+      "y": 270
+    }
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "replace": false,
+  "values": [
+    "varhopper:echo_hopper",
+    "varhopper:hyper_hopper",
+    "varhopper:super_hopper",
+    "varhopper:slopper_hopper",
+    "varhopper:splotter_hopper"
+  ]
+}
+

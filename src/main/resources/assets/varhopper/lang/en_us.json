@@ -1,0 +1,13 @@
+{
+  "container.varhopper.echo_hopper": "Echo Hopper",
+  "container.varhopper.super_hopper": "Super Hopper",
+  "container.varhopper.slopper_hopper": "Slopper Hopper",
+  "container.varhopper.hyper_hopper": "Hyper Hopper",
+  "container.varhopper.splotter_hopper": "Splotter Hopper",
+
+  "block.varhopper.echo_hopper": "Echo Hopper",
+  "block.varhopper.super_hopper": "Super Hopper",
+  "block.varhopper.slopper_hopper": "Slopper Hopper",
+  "block.varhopper.hyper_hopper": "Hyper Hopper",
+  "block.varhopper.splotter_hopper": "Splotter Hopper"
+}

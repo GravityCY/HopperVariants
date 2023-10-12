@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "facing=south": {
+      "model": "varhopper:block/splotter_hopper"
+    },
+    "facing=down": {
+      "model": "varhopper:block/splotter_hopper"
+    },
+    "facing=east": {
+      "model": "varhopper:block/splotter_hopper",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "varhopper:block/splotter_hopper",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "varhopper:block/splotter_hopper"
+    }
+  }
+}

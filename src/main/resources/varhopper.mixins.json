@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "me.gravityio.varhopper.mixins.impl",
+  "compatibilityLevel": "JAVA_17",
+  "mixins": [
+    "HopperAccessor"
+  ],
+  "client": [
+    "ExampleMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}
