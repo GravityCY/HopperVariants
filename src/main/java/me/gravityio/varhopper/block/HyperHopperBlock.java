@@ -2,6 +2,7 @@ package me.gravityio.varhopper.block;
 
 import me.gravityio.varhopper.ModBlockEntities;
 import me.gravityio.varhopper.block.entity.HyperHopperEntity;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;
@@ -52,6 +53,11 @@ public class HyperHopperBlock extends VanillaHopperBlock {
             return;
         }
         hyperHopper.onItemCollision(state, world, pos, item);
+    }
+
+    @Override
+    public void neighborUpdate(BlockState state, World world, BlockPos pos, Block sourceBlock, BlockPos sourcePos, boolean notify) {
+        super.updateEnabled(world, pos, state, NOTIFY_LISTENERS);
     }
 
     @Override

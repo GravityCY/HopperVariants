@@ -1,0 +1,7 @@
+{
+	"parent": "varhopper:block/hyper_hopper",
+	"textures": {
+		"particle": "varhopper:block/hyper_hopper_outside_powered",
+		"side": "varhopper:block/hyper_hopper_outside_powered"
+	}
+}

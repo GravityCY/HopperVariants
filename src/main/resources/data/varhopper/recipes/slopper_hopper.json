@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "w w",
+    "wcw",
+    " w "
+  ],
+  "key": {
+    "w": {
+      "tag": "minecraft:planks"
+    },
+    "c": {
+      "item": "minecraft:chest"
+    }
+  },
+  "result": {
+    "item": "varhopper:slopper_hopper",
+    "count": 1
+  }
+}

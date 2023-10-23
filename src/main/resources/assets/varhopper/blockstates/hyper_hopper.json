@@ -1,6 +1,9 @@
 {
   "variants": {
-    "facing=down": {
+    "facing=down,enabled=false": {
+      "model": "varhopper:block/hyper_hopper_powered"
+    },
+    "facing=down,enabled=true": {
       "model": "varhopper:block/hyper_hopper"
     },
     "facing=north": {

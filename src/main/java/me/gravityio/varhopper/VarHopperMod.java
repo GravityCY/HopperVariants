@@ -1,10 +1,8 @@
 package me.gravityio.varhopper;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderEvents;
-import net.fabricmc.fabric.api.itemgroup.v1.ItemGroupEvents;
+import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
-import net.minecraft.item.ItemGroups;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -16,9 +14,14 @@ public class VarHopperMod implements ModInitializer {
     @Override
     public void onInitialize() {
         IS_DEBUG = FabricLoader.getInstance().isDevelopmentEnvironment();
+        ModConfig.INSTANCE.load();
         ModBlocks.init();
         ModItems.init();
         ModBlockEntities.init();
+        ModScreens.init();
+        CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
+                dispatcher.register(ModCommands.build())
+        );
     }
 
     public static void DEBUG(String message, Object... args) {

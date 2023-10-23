@@ -9,5 +9,9 @@
   "block.varhopper.super_hopper": "Super Hopper",
   "block.varhopper.slopper_hopper": "Slopper Hopper",
   "block.varhopper.hyper_hopper": "Hyper Hopper",
-  "block.varhopper.splotter_hopper": "Splotter Hopper"
+  "block.varhopper.splotter_hopper": "Splotter Hopper",
+
+  "command.varhopper.print_all": "Hopper Cooldowns:",
+  "command.varhopper.get_int": "'%s' is set to %s",
+  "command.varhopper.set_int": "'%s' has been set to %s"
 }

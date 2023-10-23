@@ -35,15 +35,19 @@ import java.util.function.BooleanSupplier;
 
 @SuppressWarnings("UnstableApiUsage")
 public abstract class VanillaHopperEntity extends LockableContainerBlockEntity implements Hopper, CoordinatedCooldown {
-    protected final DefaultedList<ItemStack> inventory = DefaultedList.ofSize(5, ItemStack.EMPTY);
-    protected final InventoryStorage inventoryWrapper = InventoryStorage.of(this, null);
-    protected final int defaultCooldown;
+    protected final DefaultedList<ItemStack> inventory;
+    protected final InventoryStorage inventoryWrapper;
     public int transferCooldown = -1;
     public VanillaHopperEntity(BlockEntityType<?> type, BlockPos blockPos, BlockState blockState) {
         super(type, blockPos, blockState);
-        this.defaultCooldown = this.getDefaultCooldown();
+        this.inventory = DefaultedList.ofSize(this.getInventorySize(), ItemStack.EMPTY);
+        this.inventoryWrapper = InventoryStorage.of(this, null);
     }
     public abstract int getDefaultCooldown();
+    public int getInventorySize() {
+        return 5;
+    }
+
     public void tick(World world, BlockPos pos, BlockState state) {
         if (world.isClient) {
             return;
@@ -73,7 +77,7 @@ public abstract class VanillaHopperEntity extends LockableContainerBlockEntity i
         applyCooldown |= this.push(world, pos, state);
         applyCooldown |= thenRun.getAsBoolean();
         if (!applyCooldown) return;
-        this.transferCooldown = this.defaultCooldown;
+        this.transferCooldown = this.getDefaultCooldown();
         this.markDirty();
     }
 
@@ -158,6 +162,7 @@ public abstract class VanillaHopperEntity extends LockableContainerBlockEntity i
 
     // When an ItemEntity collides with the hopper
     public void onItemCollision(BlockState state, World world, BlockPos pos, ItemEntity entity) {
+        if (world.isClient) return;
         this.pushAndThen(world, pos, state, () -> this.pullItemEntity(entity));
     }
 
@@ -167,7 +172,7 @@ public abstract class VanillaHopperEntity extends LockableContainerBlockEntity i
             return;
         }
 
-        this.transferCooldown = this.defaultCooldown;
+        this.transferCooldown = this.getDefaultCooldown();
         this.markDirty();
     }
     @Override

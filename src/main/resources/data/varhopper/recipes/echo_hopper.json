@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "e",
+    "h"
+  ],
+  "key": {
+    "e": {
+      "item": "minecraft:echo_shard"
+    },
+    "h": {
+      "item": "varhopper:super_hopper"
+    }
+  },
+  "result": {
+    "item": "varhopper:echo_hopper",
+    "count": 1
+  }
+}

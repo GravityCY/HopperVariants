@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "clc",
+    "ihi",
+    "iii"
+  ],
+  "key": {
+    "c": {
+      "item": "minecraft:comparator"
+    },
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "i": {
+      "item": "minecraft:iron_ingot"
+    },
+    "h": {
+      "item": "varhopper:super_hopper"
+    }
+  },
+  "result": {
+    "item": "varhopper:splotter_hopper",
+    "count": 1
+  }
+}

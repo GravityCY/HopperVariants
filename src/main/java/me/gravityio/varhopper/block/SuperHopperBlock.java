@@ -1,7 +1,6 @@
 package me.gravityio.varhopper.block;
 
 import me.gravityio.varhopper.ModBlockEntities;
-import me.gravityio.varhopper.block.entity.HyperHopperEntity;
 import me.gravityio.varhopper.block.entity.SuperHopperEntity;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;

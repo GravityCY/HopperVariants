@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rar",
+    "aha",
+    "rar"
+  ],
+  "key": {
+    "r": {
+      "item": "minecraft:redstone_block"
+    },
+    "a": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "h": {
+      "item": "varhopper:hyper_hopper"
+    }
+  },
+  "result": {
+    "item": "varhopper:super_hopper",
+    "count": 1
+  }
+}

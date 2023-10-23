@@ -2,9 +2,6 @@ package me.gravityio.varhopper.block;
 
 import me.gravityio.varhopper.ModBlockEntities;
 import me.gravityio.varhopper.block.entity.EchoHopperEntity;
-import me.gravityio.varhopper.block.entity.SuperHopperEntity;
-import net.minecraft.block.AbstractBlock;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.entity.BlockEntity;

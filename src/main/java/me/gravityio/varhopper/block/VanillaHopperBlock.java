@@ -50,7 +50,7 @@ public abstract class VanillaHopperBlock extends BlockWithEntity {
         super(settings);
     }
 
-    private void updateEnabled(World world, BlockPos pos, BlockState state, int flags) {
+    protected void updateEnabled(World world, BlockPos pos, BlockState state, int flags) {
         boolean enabled = !world.isReceivingRedstonePower(pos);
         if (enabled == state.get(ENABLED)) return;
 
@@ -110,7 +110,7 @@ public abstract class VanillaHopperBlock extends BlockWithEntity {
             return;
         }
 
-        this.updateEnabled(world, pos, state, 2);
+        this.updateEnabled(world, pos, state, NOTIFY_LISTENERS);
     }
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {

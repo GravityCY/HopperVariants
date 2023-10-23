@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "lrl",
+    "rhr",
+    "lrl"
+  ],
+  "key": {
+    "l": {
+      "item": "minecraft:lapis_lazuli"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "h": {
+      "item": "minecraft:hopper"
+    }
+  },
+  "result": {
+    "item": "varhopper:hyper_hopper",
+    "count": 1
+  }
+}
