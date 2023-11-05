@@ -37,7 +37,7 @@ public class ModBlockEntities {
         VarHopperMod.DEBUG("[ModBlockEntities] Registering block entity {}", name);
         return Registry.register(Registries.BLOCK_ENTITY_TYPE,
                 new Identifier(VarHopperMod.MOD_ID, name),
-                FabricBlockEntityTypeBuilder.create(builder, block).build()               );
+                FabricBlockEntityTypeBuilder.create(builder, block).build());
     }
 
     public static void init() {

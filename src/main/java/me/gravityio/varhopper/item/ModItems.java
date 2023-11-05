@@ -39,11 +39,11 @@ public class ModItems {
 
     public static void init() {
         ItemGroupEvents.modifyEntriesEvent(ItemGroups.REDSTONE).register(entries -> {
-           entries.add(ECHO_HOPPER);
-           entries.add(PHANTOM_HOPPER);
-           entries.add(BLAZE_HOPPER);
-           entries.add(SLOPPER_HOPPER);
-           entries.add(SPLOTTER_HOPPER);
+            entries.add(ECHO_HOPPER);
+            entries.add(PHANTOM_HOPPER);
+            entries.add(BLAZE_HOPPER);
+            entries.add(SLOPPER_HOPPER);
+            entries.add(SPLOTTER_HOPPER);
         });
     }
 

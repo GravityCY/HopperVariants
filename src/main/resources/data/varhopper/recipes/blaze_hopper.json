@@ -1,26 +1,26 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#/#",
-        "cHc",
-        "#/#"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:lapis_lazuli"
-        },
-        "/": {
-            "item": "minecraft:blaze_rod"
-        },
-        "c": {
-            "item": "minecraft:copper_ingot"
-        },
-        "H": {
-            "item": "minecraft:hopper"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#/#",
+    "cHc",
+    "#/#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:lapis_lazuli"
     },
-    "result": {
-        "item": "varhopper:blaze_hopper",
-        "count": 1
+    "/": {
+      "item": "minecraft:blaze_rod"
+    },
+    "c": {
+      "item": "minecraft:copper_ingot"
+    },
+    "H": {
+      "item": "minecraft:hopper"
     }
+  },
+  "result": {
+    "item": "varhopper:blaze_hopper",
+    "count": 1
+  }
 }

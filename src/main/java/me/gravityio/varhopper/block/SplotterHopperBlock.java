@@ -7,19 +7,13 @@ import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.Hopper;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemPlacementContext;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.Util;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
 
 public class SplotterHopperBlock extends AbstractHopperBlock<SplotterHopperEntity> {
     protected static final VoxelShape NS_SHAPE = Util.make(() -> {
@@ -64,10 +58,12 @@ public class SplotterHopperBlock extends AbstractHopperBlock<SplotterHopperEntit
     public SplotterHopperBlock(Settings settings) {
         super(settings);
     }
+
     @Override
     protected BlockEntityType<SplotterHopperEntity> getEntityType() {
         return ModBlockEntities.SPLOTTER_HOPPER;
     }
+
     @Override
     protected boolean isReplaceable() {
         return false;

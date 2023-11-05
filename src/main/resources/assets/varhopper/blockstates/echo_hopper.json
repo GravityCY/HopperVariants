@@ -1,6 +1,5 @@
 {
   "variants": {
-
     "facing=down,lid_opened=false": {
       "model": "varhopper:block/echo_hopper_lid"
     },
@@ -19,7 +18,6 @@
       "model": "varhopper:block/echo_hopper_side_lid",
       "y": 270
     },
-
     "facing=down,lid_opened=true": {
       "model": "varhopper:block/echo_hopper"
     },

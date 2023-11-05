@@ -4,8 +4,9 @@
   "name": "${mod_name}",
   "version": "${mod_version}",
   "description": "${mod_description}",
-  "authors": ["${mod_author}"],
-
+  "authors": [
+    "${mod_author}"
+  ],
   "contact": {
     "homepage": "${mod_sources}",
     "sources": "${mod_sources}",
@@ -13,7 +14,6 @@
   },
   "license": "${mod_license}",
   "icon": "assets/varhopper/icon.png",
-
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -27,7 +27,8 @@
     "varhopper.mixin.json"
   ],
   "depends": {
-    "fabricloader": ">=${loader_version}",
+    "fabricloader": "*",
+    "fabric": "*",
     "minecraft": "~${minecraft_version}",
     "java": ">=17"
   }

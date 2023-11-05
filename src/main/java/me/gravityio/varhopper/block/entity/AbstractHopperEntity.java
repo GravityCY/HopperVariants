@@ -1,6 +1,5 @@
 package me.gravityio.varhopper.block.entity;
 
-import me.gravityio.varhopper.VarHopperMod;
 import me.gravityio.varhopper.block.AbstractHopperBlock;
 import me.gravityio.varhopper.block.ModProperties;
 import net.fabricmc.fabric.api.transfer.v1.item.InventoryStorage;
@@ -11,7 +10,6 @@ import net.fabricmc.fabric.api.transfer.v1.storage.StorageUtil;
 import net.fabricmc.fabric.api.transfer.v1.transaction.Transaction;
 import net.gnomecraft.cooldowncoordinator.CooldownCoordinator;
 import net.gnomecraft.cooldowncoordinator.CoordinatedCooldown;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.entity.BlockEntityType;
 import net.minecraft.block.entity.Hopper;
@@ -31,8 +29,6 @@ import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Box;
 import net.minecraft.util.math.Direction;
-import net.minecraft.util.shape.VoxelShape;
-import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.World;
 
 import java.util.List;
@@ -43,13 +39,16 @@ public abstract class AbstractHopperEntity extends LockableContainerBlockEntity 
     protected final DefaultedList<ItemStack> inventory;
     protected final InventoryStorage inventoryWrapper;
     public int transferCooldown = -1;
+
     public AbstractHopperEntity(BlockEntityType<?> type, BlockPos blockPos, BlockState blockState) {
         super(type, blockPos, blockState);
         this.inventory = DefaultedList.ofSize(this.getInventorySize(), ItemStack.EMPTY);
         this.inventoryWrapper = InventoryStorage.of(this, null);
         this.transferCooldown = this.getDefaultCooldown();
     }
+
     public abstract int getDefaultCooldown();
+
     public int getInventorySize() {
         return 5;
     }
@@ -184,6 +183,7 @@ public abstract class AbstractHopperEntity extends LockableContainerBlockEntity 
         this.transferCooldown = this.getDefaultCooldown();
         this.markDirty();
     }
+
     @Override
     public void readNbt(NbtCompound nbt) {
         super.readNbt(nbt);
@@ -191,42 +191,52 @@ public abstract class AbstractHopperEntity extends LockableContainerBlockEntity 
         Inventories.readNbt(nbt, this.inventory);
         this.transferCooldown = nbt.getInt("TransferCooldown");
     }
+
     @Override
     protected void writeNbt(NbtCompound nbt) {
         super.writeNbt(nbt);
         Inventories.writeNbt(nbt, this.inventory);
         nbt.putInt("TransferCooldown", this.transferCooldown);
     }
+
     @Override
     protected abstract Text getContainerName();
+
     @Override
     protected ScreenHandler createScreenHandler(int syncId, PlayerInventory playerInventory) {
         return new HopperScreenHandler(syncId, playerInventory, this);
     }
+
     @Override
     public double getHopperX() {
         return this.pos.getX() + 0.5;
     }
+
     @Override
     public double getHopperY() {
         return this.pos.getY() + 0.5;
     }
+
     @Override
     public double getHopperZ() {
         return this.pos.getZ() + 0.5;
     }
+
     @Override
     public int size() {
         return this.inventory.size();
     }
+
     @Override
     public boolean isEmpty() {
         return this.inventory.stream().allMatch(ItemStack::isEmpty);
     }
+
     @Override
     public ItemStack getStack(int slot) {
         return this.inventory.get(slot);
     }
+
     @Override
     public ItemStack removeStack(int slot, int amount) {
         var newStack = Inventories.splitStack(this.inventory, slot, amount);
@@ -235,19 +245,23 @@ public abstract class AbstractHopperEntity extends LockableContainerBlockEntity 
         }
         return newStack;
     }
+
     @Override
     public ItemStack removeStack(int slot) {
         return Inventories.removeStack(this.inventory, slot);
     }
+
     @Override
     public void setStack(int slot, ItemStack stack) {
         this.inventory.set(slot, stack);
         this.markDirty();
     }
+
     @Override
     public boolean canPlayerUse(PlayerEntity player) {
         return Inventory.canPlayerUse(this, player);
     }
+
     @Override
     public void clear() {
         this.inventory.clear();

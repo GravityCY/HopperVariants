@@ -70,6 +70,7 @@ public class SlopperHopperBlock extends AbstractHopperBlock<SlopperHopperEntity>
     protected BlockEntityType<SlopperHopperEntity> getEntityType() {
         return ModBlockEntities.SLOPPER_HOPPER;
     }
+
     @Override
     protected boolean isReplaceable() {
         return true;

@@ -1,23 +1,23 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#E#",
-        "#V#",
-        "###"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:sculk"
-        },
-        "E": {
-            "item": "minecraft:echo_shard"
-        },
-        "V": {
-            "item": "varhopper:phantom_hopper"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#E#",
+    "#V#",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:sculk"
     },
-    "result": {
-        "item": "varhopper:echo_hopper",
-        "count": 1
+    "E": {
+      "item": "minecraft:echo_shard"
+    },
+    "V": {
+      "item": "varhopper:phantom_hopper"
     }
+  },
+  "result": {
+    "item": "varhopper:echo_hopper",
+    "count": 1
+  }
 }

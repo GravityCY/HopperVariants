@@ -1,26 +1,26 @@
 {
-    "type": "minecraft:crafting_shaped",
-    "pattern": [
-        "#A#",
-        "#V#",
-        "APA"
-    ],
-    "key": {
-        "#": {
-            "item": "minecraft:phantom_membrane"
-        },
-        "A": {
-            "item": "minecraft:amethyst_shard"
-        },
-        "V": {
-            "item": "varhopper:blaze_hopper"
-        },
-        "P": {
-            "item": "minecraft:popped_chorus_fruit"
-        }
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#A#",
+    "#V#",
+    "APA"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:phantom_membrane"
     },
-    "result": {
-        "item": "varhopper:phantom_hopper",
-        "count": 1
+    "A": {
+      "item": "minecraft:amethyst_shard"
+    },
+    "V": {
+      "item": "varhopper:blaze_hopper"
+    },
+    "P": {
+      "item": "minecraft:popped_chorus_fruit"
     }
+  },
+  "result": {
+    "item": "varhopper:phantom_hopper",
+    "count": 1
+  }
 }

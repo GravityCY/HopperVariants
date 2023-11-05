@@ -14,6 +14,7 @@ public class SlopperScreenHandler extends ScreenHandler {
     public SlopperScreenHandler(int syncId, PlayerInventory inventory) {
         this(syncId, inventory, new SimpleInventory(1));
     }
+
     public SlopperScreenHandler(int syncId, PlayerInventory playerInventory, Inventory inventory) {
         super(ModScreens.SLOPPER_SCREEN, syncId);
         this.inventory = inventory;
@@ -21,18 +22,17 @@ public class SlopperScreenHandler extends ScreenHandler {
         inventory.onOpen(playerInventory.player);
         this.addSlot(new Slot(inventory, 0, 80, 20));
 
-        for(int j = 0; j < 3; ++j) {
-            for(int k = 0; k < 9; ++k) {
+        for (int j = 0; j < 3; ++j) {
+            for (int k = 0; k < 9; ++k) {
                 this.addSlot(new Slot(playerInventory, k + j * 9 + 9, 8 + k * 18, j * 18 + 51));
             }
         }
 
-        for(int j = 0; j < 9; ++j) {
+        for (int j = 0; j < 9; ++j) {
             this.addSlot(new Slot(playerInventory, j, 8 + j * 18, 109));
         }
 
     }
-
 
 
     public boolean canUse(PlayerEntity player) {

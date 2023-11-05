@@ -17,6 +17,7 @@ import net.minecraft.world.World;
 // Splitter Hopper == Splotter
 public class SplotterHopperEntity extends AbstractHopperEntity {
     protected boolean intoFirst = true;
+
     public SplotterHopperEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntities.SPLOTTER_HOPPER, blockPos, blockState);
     }

@@ -96,6 +96,7 @@ public abstract class AbstractHopperBlock<T extends AbstractHopperEntity> extend
 
 
     protected abstract BlockEntityType<T> getEntityType();
+
     protected abstract boolean isReplaceable();
 
     protected void updateEnabled(World world, BlockPos pos, BlockState state, int flags) {
@@ -172,12 +173,14 @@ public abstract class AbstractHopperBlock<T extends AbstractHopperEntity> extend
         Direction direction = ctx.getSide().getOpposite();
         return this.getDefaultState().with(FACING, direction.getAxis() == Direction.Axis.Y ? Direction.DOWN : direction).with(ENABLED, true);
     }
+
     @Override
     public void onPlaced(World world, BlockPos pos, BlockState state, @Nullable LivingEntity placer, ItemStack itemStack) {
         if (!itemStack.hasCustomName() || !(world.getBlockEntity(pos) instanceof AbstractHopperEntity hopper)) return;
 
         hopper.setCustomName(itemStack.getName());
     }
+
     @Override
     public void onBlockAdded(BlockState state, World world, BlockPos pos, BlockState oldState, boolean notify) {
         if (oldState.isOf(state.getBlock())) {
@@ -186,6 +189,7 @@ public abstract class AbstractHopperBlock<T extends AbstractHopperEntity> extend
 
         this.updateEnabled(world, pos, state, NOTIFY_LISTENERS);
     }
+
     @Override
     public void onStateReplaced(BlockState state, World world, BlockPos pos, BlockState newState, boolean moved) {
         if (state.isOf(newState.getBlock())) {
@@ -208,26 +212,32 @@ public abstract class AbstractHopperBlock<T extends AbstractHopperEntity> extend
     public BlockRenderType getRenderType(BlockState state) {
         return BlockRenderType.MODEL;
     }
+
     @Override
     public boolean hasComparatorOutput(BlockState state) {
         return true;
     }
+
     @Override
     public int getComparatorOutput(BlockState state, World world, BlockPos pos) {
         return ScreenHandler.calculateComparatorOutput(world.getBlockEntity(pos));
     }
+
     @Override
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return state.with(FACING, rotation.rotate(state.get(FACING)));
     }
+
     @Override
     public BlockState mirror(BlockState state, BlockMirror mirror) {
         return state.rotate(mirror.getRotation(state.get(FACING)));
     }
+
     @Override
     protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
         builder.add(FACING, ENABLED, LID_OPENED);
     }
+
     @Override
     public boolean canPathfindThrough(BlockState state, BlockView world, BlockPos pos, NavigationType type) {
         return false;

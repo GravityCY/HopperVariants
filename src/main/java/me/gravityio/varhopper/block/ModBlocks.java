@@ -1,7 +1,6 @@
 package me.gravityio.varhopper.block;
 
 import me.gravityio.varhopper.VarHopperMod;
-import me.gravityio.varhopper.block.*;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.Blocks;

@@ -1,8 +1,8 @@
 package me.gravityio.varhopper.screen;
 
 import me.gravityio.varhopper.VarHopperMod;
-import me.gravityio.varhopper.screen.SlopperScreen;
-import me.gravityio.varhopper.screen.SlopperScreenHandler;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.loader.api.FabricLoader;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.ingame.HandledScreens;
 import net.minecraft.client.gui.screen.ingame.ScreenHandlerProvider;
@@ -28,7 +28,9 @@ public class ModScreens {
                                                                                                                         HandledScreens.Provider<T, U> provider) {
         VarHopperMod.DEBUG("[ModScreens] Registering screen handler {}", name);
         Registry.register(Registries.SCREEN_HANDLER, new Identifier(VarHopperMod.MOD_ID, name), type);
-        HandledScreens.register(type, provider);
+        if (FabricLoader.getInstance().getEnvironmentType() == EnvType.CLIENT) {
+            HandledScreens.register(type, provider);
+        }
         return type;
     }
 }

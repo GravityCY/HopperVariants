@@ -17,7 +17,6 @@
       "model": "varhopper:block/splotter_hopper_lid",
       "y": 90
     },
-
     "facing=north,lid_opened=true": {
       "model": "varhopper:block/splotter_hopper"
     },
@@ -35,6 +34,5 @@
       "model": "varhopper:block/splotter_hopper",
       "y": 90
     }
-
   }
 }

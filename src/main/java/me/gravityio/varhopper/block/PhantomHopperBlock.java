@@ -8,10 +8,12 @@ public class PhantomHopperBlock extends AbstractHopperBlock<PhantomHopperEntity>
     public PhantomHopperBlock(Settings settings) {
         super(settings);
     }
+
     @Override
     protected BlockEntityType<PhantomHopperEntity> getEntityType() {
         return ModBlockEntities.PHANTOM_HOPPER;
     }
+
     @Override
     protected boolean isReplaceable() {
         return true;

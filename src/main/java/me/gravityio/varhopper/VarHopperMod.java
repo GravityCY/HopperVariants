@@ -4,7 +4,6 @@ import me.gravityio.varhopper.block.ModBlocks;
 import me.gravityio.varhopper.block.entity.ModBlockEntities;
 import me.gravityio.varhopper.command.ModCommands;
 import me.gravityio.varhopper.item.ModItems;
-import me.gravityio.varhopper.screen.ModScreens;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;

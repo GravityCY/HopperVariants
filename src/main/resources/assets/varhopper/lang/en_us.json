@@ -4,13 +4,11 @@
   "container.varhopper.phantom_hopper": "Phantom Hopper",
   "container.varhopper.echo_hopper": "Echo Hopper",
   "container.varhopper.splotter_hopper": "Splotter Hopper",
-
   "block.varhopper.slopper_hopper": "Slopper Hopper",
   "block.varhopper.blaze_hopper": "Blaze Hopper",
   "block.varhopper.phantom_hopper": "Phantom Hopper",
   "block.varhopper.echo_hopper": "Echo Hopper",
   "block.varhopper.splotter_hopper": "Splotter Hopper",
-
   "command.varhopper.print_all": "Hopper Cooldowns:",
   "command.varhopper.get_int": "'%s' is set to %s",
   "command.varhopper.set_int": "'%s' has been set to %s"

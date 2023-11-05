@@ -16,7 +16,7 @@ public class ModHelper {
             return null;
         }
 
-        return ((BlockItem)stack.getItem()).getBlock();
+        return ((BlockItem) stack.getItem()).getBlock();
     }
 
 }
