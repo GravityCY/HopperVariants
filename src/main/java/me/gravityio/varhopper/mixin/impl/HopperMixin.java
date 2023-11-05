@@ -27,7 +27,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(HopperBlock.class)
 public class HopperMixin {
-    @Shadow @Final public static DirectionProperty FACING;
 
     @Inject(
             method = "onUse",
