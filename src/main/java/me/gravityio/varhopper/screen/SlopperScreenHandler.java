@@ -1,6 +1,5 @@
 package me.gravityio.varhopper.screen;
 
-import me.gravityio.varhopper.ModScreens;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.Inventory;

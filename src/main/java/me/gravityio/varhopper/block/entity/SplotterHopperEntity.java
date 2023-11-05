@@ -1,8 +1,7 @@
 package me.gravityio.varhopper.block.entity;
 
-import me.gravityio.varhopper.ModBlockEntities;
 import me.gravityio.varhopper.ModConfig;
-import me.gravityio.varhopper.block.VanillaHopperBlock;
+import me.gravityio.varhopper.block.AbstractHopperBlock;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemStorage;
 import net.fabricmc.fabric.api.transfer.v1.item.ItemVariant;
 import net.fabricmc.fabric.api.transfer.v1.storage.Storage;
@@ -16,8 +15,8 @@ import net.minecraft.util.math.Direction;
 import net.minecraft.world.World;
 
 // Splitter Hopper == Splotter
-public class SplotterHopperEntity extends VanillaHopperEntity {
-    boolean intoFirst = true;
+public class SplotterHopperEntity extends AbstractHopperEntity {
+    protected boolean intoFirst = true;
     public SplotterHopperEntity(BlockPos blockPos, BlockState blockState) {
         super(ModBlockEntities.SPLOTTER_HOPPER, blockPos, blockState);
     }
@@ -36,9 +35,9 @@ public class SplotterHopperEntity extends VanillaHopperEntity {
     public boolean pushIntoStorage(World world, BlockPos pos, BlockState state) {
         Direction dir;
         if (intoFirst) {
-            dir = state.get(VanillaHopperBlock.FACING);
+            dir = state.get(AbstractHopperBlock.FACING);
         } else {
-            dir = state.get(VanillaHopperBlock.FACING).getOpposite();
+            dir = state.get(AbstractHopperBlock.FACING).getOpposite();
         }
         var outputPos = pos.offset(dir);
         Storage<ItemVariant> outputStorage = ItemStorage.SIDED.find(world, outputPos, dir.getOpposite());

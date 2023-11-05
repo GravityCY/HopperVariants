@@ -1,5 +1,10 @@
 package me.gravityio.varhopper;
 
+import me.gravityio.varhopper.block.ModBlocks;
+import me.gravityio.varhopper.block.entity.ModBlockEntities;
+import me.gravityio.varhopper.command.ModCommands;
+import me.gravityio.varhopper.item.ModItems;
+import me.gravityio.varhopper.screen.ModScreens;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.command.v2.CommandRegistrationCallback;
 import net.fabricmc.loader.api.FabricLoader;
@@ -18,7 +23,6 @@ public class VarHopperMod implements ModInitializer {
         ModBlocks.init();
         ModItems.init();
         ModBlockEntities.init();
-        ModScreens.init();
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) ->
                 dispatcher.register(ModCommands.build())
         );

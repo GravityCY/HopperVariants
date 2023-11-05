@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "minecraft:hopper",
+    "varhopper:slopper_hopper",
+    "varhopper:blaze_hopper",
+    "varhopper:phantom_hopper",
+    "varhopper:echo_hopper"
+  ]
+}

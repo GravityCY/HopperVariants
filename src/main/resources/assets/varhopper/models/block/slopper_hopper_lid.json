@@ -1,0 +1,134 @@
+{
+	"credit": "Made with Blockbench",
+	"ambientocclusion": false,
+	"texture_size": [64, 64],
+	"textures": {
+		"particle": "varhopper:block/slopper_hopper",
+		"texture": "varhopper:block/slopper_hopper",
+		"lid": "varhopper:block/slopper_hopper_lid"
+	},
+	"elements": [
+		{
+			"name": "lip",
+			"from": [0, 10, 0],
+			"to": [16, 11, 16],
+			"faces": {
+				"north": {"uv": [8, 1.5, 12, 1.75], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [8, 1.75, 12, 2], "texture": "#texture", "cullface": "east"},
+				"south": {"uv": [8, 2, 12, 2.25], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [8, 2.25, 12, 2.5], "texture": "#texture", "cullface": "west"},
+				"up": {"uv": [4, 4, 0, 0], "texture": "#texture", "cullface": "up"},
+				"down": {"uv": [4, 4, 0, 8], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "top_west",
+			"from": [0, 11, 0],
+			"to": [5, 16, 16],
+			"faces": {
+				"north": {"uv": [5.25, 9.75, 6.5, 11], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [6.5, 2.5, 10.5, 3.75], "texture": "#texture", "cullface": "up"},
+				"south": {"uv": [6.5, 9.75, 7.75, 11], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [6.5, 3.75, 10.5, 5], "texture": "#texture", "cullface": "west"},
+				"up": {"uv": [5.25, 10.5, 4, 6.5], "texture": "#texture", "cullface": "up"}
+			}
+		},
+		{
+			"name": "top_east",
+			"from": [11, 11, 0],
+			"to": [16, 16, 16],
+			"faces": {
+				"north": {"uv": [9.25, 6.25, 10.5, 7.5], "texture": "#texture", "cullface": "north"},
+				"east": {"uv": [4, 0, 8, 1.25], "texture": "#texture", "cullface": "east"},
+				"south": {"uv": [0, 9.5, 1.25, 10.75], "texture": "#texture", "cullface": "south"},
+				"west": {"uv": [4, 1.25, 8, 2.5], "texture": "#texture", "cullface": "up"},
+				"up": {"uv": [5.25, 6.5, 4, 2.5], "texture": "#texture", "cullface": "up"}
+			}
+		},
+		{
+			"name": "top_north",
+			"from": [5, 11, 0],
+			"to": [11, 16, 5],
+			"faces": {
+				"north": {"uv": [2, 8, 3.5, 9.25], "texture": "#texture", "cullface": "north"},
+				"south": {"uv": [8.5, 5, 10, 6.25], "texture": "#texture", "cullface": "up"},
+				"up": {"uv": [6.75, 9.75, 5.25, 8.5], "texture": "#texture", "cullface": "up"}
+			}
+		},
+		{
+			"name": "top_south",
+			"from": [5, 11, 11],
+			"to": [11, 16, 16],
+			"faces": {
+				"north": {"uv": [6.75, 8.5, 8.25, 9.75], "texture": "#texture", "cullface": "up"},
+				"south": {"uv": [8.25, 8.5, 9.75, 9.75], "texture": "#texture", "cullface": "south"},
+				"up": {"uv": [3.5, 10.5, 2, 9.25], "texture": "#texture", "cullface": "up"}
+			}
+		},
+		{
+			"name": "girth",
+			"from": [4, 4, 4],
+			"to": [12, 10, 12],
+			"faces": {
+				"north": {"uv": [5.25, 7, 7.25, 8.5], "texture": "#texture"},
+				"east": {"uv": [7.25, 7, 9.25, 8.5], "texture": "#texture"},
+				"south": {"uv": [0, 8, 2, 9.5], "texture": "#texture"},
+				"west": {"uv": [8, 0, 10, 1.5], "texture": "#texture"},
+				"down": {"uv": [8.5, 5, 6.5, 7], "texture": "#texture"}
+			}
+		},
+		{
+			"name": "dangly bit",
+			"from": [6, 0, 6],
+			"to": [10, 4, 10],
+			"faces": {
+				"north": {"uv": [9.25, 7.5, 10.25, 8.5], "texture": "#texture"},
+				"east": {"uv": [7.75, 9.75, 8.75, 10.75], "texture": "#texture"},
+				"south": {"uv": [9.75, 8.5, 10.75, 9.5], "texture": "#texture"},
+				"west": {"uv": [8.75, 9.75, 9.75, 10.75], "texture": "#texture"},
+				"down": {"uv": [11, 0, 10, 1], "texture": "#texture", "cullface": "down"}
+			}
+		},
+		{
+			"from": [5, 15, 5],
+			"to": [11, 15, 11],
+			"faces": {
+				"up": {"uv": [0, 0, 16, 16], "texture": "#lid", "cullface": "up"}
+			}
+		}
+	],
+	"display": {
+		"thirdperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"thirdperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_righthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"firstperson_lefthand": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"ground": {
+			"scale": [0.5, 0.5, 0.5]
+		},
+		"gui": {
+			"rotation": [22.5, 36.25, 0],
+			"translation": [0, -0.5, 0],
+			"scale": [0.57477, 0.57477, 0.57477]
+		},
+		"head": {
+			"rotation": [180, 0, 0],
+			"translation": [0, 11, 0]
+		}
+	},
+	"groups": [
+		{
+			"name": "slopper_hopper_down_lid",
+			"origin": [8, 8, 8],
+			"color": 0,
+			"children": [0, 1, 2, 3, 4, 5, 6, 7]
+		}
+	]
+}

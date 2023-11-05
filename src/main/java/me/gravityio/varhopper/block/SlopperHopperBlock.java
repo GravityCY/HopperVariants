@@ -1,32 +1,20 @@
 package me.gravityio.varhopper.block;
 
-import me.gravityio.varhopper.ModBlockEntities;
+import me.gravityio.varhopper.block.entity.ModBlockEntities;
 import me.gravityio.varhopper.block.entity.SlopperHopperEntity;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.BlockWithEntity;
 import net.minecraft.block.ShapeContext;
-import net.minecraft.block.entity.BlockEntity;
-import net.minecraft.block.entity.BlockEntityTicker;
 import net.minecraft.block.entity.BlockEntityType;
-import net.minecraft.entity.Entity;
-import net.minecraft.entity.ItemEntity;
-import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.stat.Stats;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.Hand;
 import net.minecraft.util.function.BooleanBiFunction;
-import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.World;
-import org.jetbrains.annotations.Nullable;
 
 import java.util.stream.Stream;
 
-public class SlopperHopperBlock extends VanillaHopperBlock {
+public class SlopperHopperBlock extends AbstractHopperBlock<SlopperHopperEntity> {
 
     protected final VoxelShape DOWN_SHAPE = Stream.of(
             Block.createCuboidShape(0, 10, 0, 16, 11, 16),
@@ -79,8 +67,17 @@ public class SlopperHopperBlock extends VanillaHopperBlock {
     }
 
     @Override
+    protected BlockEntityType<SlopperHopperEntity> getEntityType() {
+        return ModBlockEntities.SLOPPER_HOPPER;
+    }
+    @Override
+    protected boolean isReplaceable() {
+        return true;
+    }
+
+    @Override
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        return switch (state.get(FACING)) {
+        var shape = switch (state.get(FACING)) {
             case DOWN -> DOWN_SHAPE;
             case NORTH -> NORTH_SHAPE;
             case EAST -> EAST_SHAPE;
@@ -88,45 +85,11 @@ public class SlopperHopperBlock extends VanillaHopperBlock {
             case WEST -> WEST_SHAPE;
             default -> VoxelShapes.empty();
         };
-    }
-
-    @Override
-    public BlockEntity createBlockEntity(BlockPos pos, BlockState state) {
-        return new SlopperHopperEntity(pos, state);
-    }
-
-    @Nullable
-    @Override
-    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(World world, BlockState state, BlockEntityType<T> type) {
-        if (world.isClient) {
-            return null;
+        if (state.get(LID_OPENED)) {
+            return shape;
         }
-
-        return BlockWithEntity.checkType(type, ModBlockEntities.SLOPPER_HOPPER, (world1, pos, state1, slopperHopper) -> slopperHopper.tick(world1, pos, state1));
+        return VoxelShapes.union(LID, shape);
     }
 
-    @Override
-    public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        if (!(entity instanceof ItemEntity item)) return;
-        if (!(world.getBlockEntity(pos) instanceof SlopperHopperEntity slopperHopper)) {
-            return;
-        }
-        var itemBox = entity.getBoundingBox().offset(-pos.getX(), -pos.getY(), -pos.getZ());
-        var inputArea = slopperHopper.getInputAreaShape();
-        if (!VoxelShapes.matchesAnywhere(VoxelShapes.cuboid(itemBox), inputArea, BooleanBiFunction.AND)) {
-            return;
-        }
-        slopperHopper.onItemCollision(state, world, pos, item);
-    }
 
-    @Override
-    public ActionResult onUse(BlockState state, World world, BlockPos pos, PlayerEntity player, Hand hand, BlockHitResult hit) {
-        if (world.isClient || !(world.getBlockEntity(pos) instanceof SlopperHopperEntity slopperHopper)) {
-            return ActionResult.SUCCESS;
-        }
-
-        player.openHandledScreen(slopperHopper);
-        player.incrementStat(Stats.INSPECT_HOPPER);
-        return ActionResult.CONSUME;
-    }
 }

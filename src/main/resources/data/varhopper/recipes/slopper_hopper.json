@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "pattern": [
     "w w",
     "wcw",
@@ -14,7 +15,6 @@
     }
   },
   "result": {
-    "item": "varhopper:slopper_hopper",
-    "count": 1
+    "item": "varhopper:slopper_hopper"
   }
 }

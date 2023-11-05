@@ -1,0 +1,10 @@
+{
+  "replace": false,
+  "values": [
+    "varhopper:blaze_hopper",
+    "varhopper:phantom_hopper",
+    "varhopper:echo_hopper",
+    "varhopper:splotter_hopper"
+  ]
+}
+

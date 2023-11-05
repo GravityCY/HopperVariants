@@ -1,5 +1,6 @@
 {
   "type": "minecraft:crafting_shaped",
+  "category": "redstone",
   "pattern": [
     "clc",
     "ihi",
@@ -10,17 +11,16 @@
       "item": "minecraft:comparator"
     },
     "l": {
-      "item": "minecraft:lapis_lazuli"
+      "item": "minecraft:copper_ingot"
     },
     "i": {
       "item": "minecraft:iron_ingot"
     },
     "h": {
-      "item": "varhopper:super_hopper"
+      "item": "varhopper:phantom_hopper"
     }
   },
   "result": {
-    "item": "varhopper:splotter_hopper",
-    "count": 1
+    "item": "varhopper:splotter_hopper"
   }
 }

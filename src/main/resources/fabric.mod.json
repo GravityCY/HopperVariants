@@ -18,8 +18,14 @@
   "entrypoints": {
     "main": [
       "me.gravityio.varhopper.VarHopperMod"
+    ],
+    "client": [
+      "me.gravityio.varhopper.client.ClientMod"
     ]
   },
+  "mixins": [
+    "varhopper.mixin.json"
+  ],
   "depends": {
     "fabricloader": ">=${loader_version}",
     "minecraft": "~${minecraft_version}",
